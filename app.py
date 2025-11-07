@@ -15,7 +15,7 @@ st.set_page_config(
 # --- Header with logo on the left ---
 col1, col2 = st.columns([0.8, 12], vertical_alignment="center")
 with col1:
-    st.image(str(LOGO_PATH), width=56)   # adjust width as you like
+    st.image(str(LOGO_PATH), width=68)   # adjust width as you like
 with col2:
     st.markdown("## Grothko App Launcher")
     st.caption("One place to access all your tools")
