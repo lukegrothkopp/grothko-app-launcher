@@ -20,9 +20,6 @@ with col2:
     st.markdown("## Grothko App Launcher")
     st.caption("One place to access all your tools")
 
-# (Optional) put the logo in the sidebar too
-st.sidebar.image(str(LOGO_PATH), use_container_width=True)
-
 def require_auth(app_name: str = "App"):
     # 1) Pull secrets
     # Option A: single password string
