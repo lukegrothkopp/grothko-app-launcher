@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # --- Header with logo on the left ---
-col1, col2 = st.columns([0.8, 2], vertical_alignment="center")
+col1, col2 = st.columns([0.8, 8], vertical_alignment="center")
 with col1:
     st.image(str(LOGO_PATH), width=56)   # adjust width as you like
 with col2:
