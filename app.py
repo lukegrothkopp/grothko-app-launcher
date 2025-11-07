@@ -1,6 +1,51 @@
 # app.py
 import streamlit as st
 
+def require_auth(app_name: str = "App"):
+    # 1) Pull secrets
+    # Option A: single password string
+    single_pw = st.secrets.get("APP_PASSWORD", None)
+    # Option B: allowlist of passwords (e.g., per-person)
+    allowed_pws = set(st.secrets.get("APP_PASSWORDS", []))
+
+    if "is_authed" not in st.session_state:
+        st.session_state.is_authed = False
+
+    # Already authenticated this session
+    if st.session_state.is_authed:
+        # Optional: tiny logout button in the sidebar
+        with st.sidebar:
+            if st.button("Logout"):
+                st.session_state.is_authed = False
+                st.rerun()
+        return  # Let the app continue
+
+    st.title(f"🔒 {app_name} – Restricted Access")
+    pw = st.text_input("Enter access password", type="password")
+
+    def check(pw_input: str) -> bool:
+        if not pw_input:
+            return False
+        # Match single or any from list
+        if single_pw and pw_input == single_pw:
+            return True
+        if allowed_pws and pw_input in allowed_pws:
+            return True
+        return False
+
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        if st.button("Unlock"):
+            if check(pw):
+                st.session_state.is_authed = True
+                st.success("Access granted.")
+                st.rerun()
+            else:
+                st.error("Incorrect password. Please try again.")
+
+    # Stop executing the rest of the app until authed
+    st.stop()
+
 st.set_page_config(page_title="Grothko • App Launcher", page_icon="🚀", layout="wide")
 
 # ----------------- DATA -----------------
