@@ -1,5 +1,27 @@
 # app.py
+from pathlib import Path
 import streamlit as st
+
+# --- Paths ---
+LOGO_PATH = Path(__file__).parent / "assets" / "header_logo.png"
+
+# --- Page config (sets browser tab icon too) ---
+st.set_page_config(
+    page_title="Grothko • App Launcher",
+    page_icon=str(LOGO_PATH),   # can be emoji, URL, or local image path
+    layout="wide",
+)
+
+# --- Header with logo on the left ---
+col1, col2 = st.columns([1, 6], vertical_alignment="center")
+with col1:
+    st.image(str(LOGO_PATH), width=56)   # adjust width as you like
+with col2:
+    st.markdown("## Grothko App Launcher")
+    st.caption("One place to access all your tools")
+
+# (Optional) put the logo in the sidebar too
+st.sidebar.image(str(LOGO_PATH), use_container_width=True)
 
 def require_auth(app_name: str = "App"):
     # 1) Pull secrets
