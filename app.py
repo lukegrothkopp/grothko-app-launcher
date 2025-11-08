@@ -70,9 +70,9 @@ st.set_page_config(page_title="Grothko • App Launcher", page_icon="🚀", layo
 # ----------------- DATA -----------------
 APPS = [
     {
-        "name": "InsightForge BI",
-        "desc": "AI-powered dashboards and KPI search.",
-        "url": "https://your-insightforge-app.streamlit.app/",
+        "name": "Grothko BIG (Business Intelligence Generator)",
+        "desc": "AI-powered BI dashboards and KPI search.",
+        "url": "https://grothko-big.streamlit.app/",
         "tags": ["BI", "AI", "Dashboards"],
         "emoji": "📊",
     },
