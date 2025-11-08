@@ -71,22 +71,36 @@ st.set_page_config(page_title="Grothko • App Launcher", page_icon="🚀", layo
 APPS = [
     {
         "name": "Grothko BIG (Business Intelligence Generator)",
-        "desc": "AI-powered BI dashboards and KPI search.",
+        "desc": "Explore AI-powered BI insights & visualizations!",
         "url": "https://grothko-big.streamlit.app/",
         "tags": ["BI", "AI", "Dashboards"],
         "emoji": "📊",
     },
     {
+        "name": "Grothko Corporate Scorecard",
+        "desc": "Classifier → Feedback Handler / Query Handler • Evaluation • Logs • DB Viewer",
+        "url": "https://bank-customer-support-agent.streamlit.app/",
+        "tags": ["Corporate", "Scorecard", "AI", "OKR"],
+        "emoji": "🏢",
+    },
+    {
+        "name": "Banking Customer AI Agent",
+        "desc": "Classifier → Feedback Handler / Query Handler • Evaluation • Logs • DB Viewer",
+        "url": "https://bank-customer-support-agent.streamlit.app/",
+        "tags": ["Banking", "Customer", "AI"],
+        "emoji": "🏦",
+    },
+    {
         "name": "Percipient Finance",
-        "desc": "13-week cash, BvA, runway.",
-        "url": "https://your-percipient-finance.streamlit.app/",
+        "desc": "KPIs, BvA, runway. Current form requires KPI and Budget CSV files for analysis.",
+        "url": "https://grothko-percipient-finance.streamlit.app/",
         "tags": ["Finance", "CFO"],
         "emoji": "💵",
     },
     {
         "name": "Healthcare Assistant",
-        "desc": "Agentic workflows for patient ops.",
-        "url": "https://your-healthcare-assistant.streamlit.app/",
+        "desc": "Agentic workflows for patients & clinicians.",
+        "url": "https://grothko-agentic-healthcare-assistant.streamlit.app/",
         "tags": ["Healthcare", "Agents"],
         "emoji": "⚕️",
     },
@@ -103,7 +117,7 @@ APPS = [
 st.title("🚀 Grothko App Launcher")
 st.caption("One place to access all your tools.")
 
-# (Optional) logo banner
+# logo banner
 # st.image("assets/header_logo.png", use_container_width=False)
 
 # Quick filter
