@@ -106,7 +106,7 @@ APPS = [
     },
     {
         "name": "HR Assistant",
-        "desc": "FILL IN INFO HERE",
+        "desc": "Self-hosted HR policy chatbot. Ingest PDFs, create embeddings, and query in natural language. Streamlit UI, LangChain retriever, Chroma vector store, OpenAI models.",
         "url": "https://grothkoconsulting-hr-assistant.streamlit.app/",
         "tags": ["Resume", "HR", "Analysis"],
         "emoji": "👩🏽‍💼",
