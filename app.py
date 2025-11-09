@@ -18,7 +18,7 @@ with col1:
     st.image(str(LOGO_PATH), width=68)   # adjust width as you like
 with col2:
     st.markdown("## Grothko App Launcher")
-    st.caption("One place to access all our tools")
+    st.caption("One place to access all our sample tools (some require you to load sample csv or pdf files to test)")
 
 def require_auth(app_name: str = "App"):
     # 1) Pull secrets
