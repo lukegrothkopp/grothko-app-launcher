@@ -99,10 +99,17 @@ APPS = [
     },
     {
         "name": "Resume Analyzer",
-        "desc": "FILL THIS IN",
+        "desc": "Upload a resume, analyze it against a job description you provide, filter relevant chunks, and search across stored resumes.",
         "url": "https://grothko-resume-analyzer.streamlit.app/",
         "tags": ["Resume", "HR", "Analysis"],
         "emoji": "📑",
+    },
+    {
+        "name": "HR Assistant",
+        "desc": "FILL IN INFO HERE",
+        "url": "https://grothkoconsulting-hr-assistant.streamlit.app/",
+        "tags": ["Resume", "HR", "Analysis"],
+        "emoji": "👩🏽‍💼",
     },
     {
         "name": "Healthcare Assistant",
