@@ -65,8 +65,6 @@ def require_auth(app_name: str = "App"):
     # Stop executing the rest of the app until authed
     st.stop()
 
-st.set_page_config(page_title="Grothko • App Launcher", page_icon="🚀", layout="wide")
-
 # ----------------- DATA -----------------
 APPS = [
     {
