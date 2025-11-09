@@ -126,8 +126,6 @@ APPS = [
 ]
 
 # ----------------- UI -----------------
-st.title("🚀 Grothko App Launcher")
-st.caption("One place to access all your tools.")
 
 # logo banner
 # st.image("assets/header_logo.png", use_container_width=False)
