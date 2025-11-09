@@ -78,8 +78,7 @@ APPS = [
     },
     {
         "name": "Grothko Corporate Scorecard",
-        "desc": "Corporate Scorecard application that provides a comprehensive view of performance, 
-        aligns departmental goals with the overall strategy, and improves communication and accountability throughout your organization",
+        "desc": "Comprehensive view of performance, aligns departmental goals with the overall strategy, and improves communication and accountability.",
         "url": "https://bank-customer-support-agent.streamlit.app/",
         "tags": ["Corporate", "Scorecard", "AI", "OKR"],
         "emoji": "🏢",
