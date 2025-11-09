@@ -70,14 +70,14 @@ st.set_page_config(page_title="Grothko • App Launcher", page_icon="🚀", layo
 # ----------------- DATA -----------------
 APPS = [
     {
-        "name": "Grothko BIG (Business Intelligence Generator)",
+        "name": "BIG (Business Intelligence Generator)",
         "desc": "Explore AI-powered BI insights & visualizations!",
         "url": "https://grothko-big.streamlit.app/",
         "tags": ["BI", "AI", "Dashboards"],
         "emoji": "📊",
     },
     {
-        "name": "Grothko Corporate Scorecard",
+        "name": "Corporate Scorecard",
         "desc": "Comprehensive view of performance, aligns departmental goals with the overall strategy, and improves communication and accountability.",
         "url": "https://bank-customer-support-agent.streamlit.app/",
         "tags": ["Corporate", "Scorecard", "AI", "OKR"],
@@ -96,6 +96,13 @@ APPS = [
         "url": "https://grothko-percipient-finance.streamlit.app/",
         "tags": ["Finance", "CFO"],
         "emoji": "💵",
+    },
+    {
+        "name": "Resume Analyzer",
+        "desc": "FILL THIS IN",
+        "url": "https://grothko-resume-analyzer.streamlit.app/",
+        "tags": ["Resume", "HR", "Analysis"],
+        "emoji": "📑",
     },
     {
         "name": "Healthcare Assistant",
