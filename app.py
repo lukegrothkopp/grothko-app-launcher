@@ -119,7 +119,7 @@ APPS = [
     {
         "name": "Travel Planner",
         "desc": "Itineraries, budgets, and bookings.",
-        "url": "https://your-travel-planner.streamlit.app/",
+        "url": "https://grothko-travel-planner.streamlit.app/",
         "tags": ["Travel", "Planner"],
         "emoji": "🧭",
     },
