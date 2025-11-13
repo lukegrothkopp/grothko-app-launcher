@@ -167,5 +167,5 @@ for r in range(rows):
 
 st.divider()
 st.markdown(
-    "Need access or want to add an app? Email **support@grothko.com**."
+    "Need access or want to add an app? Email **admin@lrgbllc.org**."
 )
