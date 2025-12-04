@@ -19,7 +19,7 @@ with col1:
 with col2:
     st.markdown("## Grothko App Launcher")
     st.caption("One place to access all our sample tools (some require you to load sample csv or pdf files to test)
-    Should a page not open right away, you’ll see a blue button in the middle that says “Yes, get this app back up!” — just click it to launch the app")
+    st.caption("If a page doesn't open right away, you’ll see a blue button in the middle that says “Yes, get this app back up!” — just click it to launch the app")
 
 def require_auth(app_name: str = "App"):
     # 1) Pull secrets
