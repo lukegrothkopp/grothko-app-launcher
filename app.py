@@ -8,17 +8,29 @@ LOGO_PATH = Path(__file__).parent / "assets" / "header_logo.png"
 # --- Page config (sets browser tab icon too) ---
 st.set_page_config(
     page_title="Grothko • App Launcher",
-    page_icon=str(LOGO_PATH),   # can be emoji, URL, or local image path
+    page_icon=str(LOGO_PATH) if LOGO_PATH.exists() else "🚀",
     layout="wide",
 )
 
 # --- Header with logo on the left ---
-col1, col2 = st.columns([0.8, 12], vertical_alignment="center")
+try:
+    col1, col2 = st.columns([0.8, 12], vertical_alignment="center")
+except TypeError:
+    # For older Streamlit versions without vertical_alignment
+    col1, col2 = st.columns([0.8, 12])
+
 with col1:
-    st.image(str(LOGO_PATH), width=68)   # adjust width as you like
+    if LOGO_PATH.exists():
+        st.image(str(LOGO_PATH), width=68)  # adjust width as you like
+    else:
+        st.write("🚀")
+
 with col2:
     st.markdown("## Grothko App Launcher")
-    st.caption("One place to access all our sample tools (some require you to load sample csv or pdf files to test)
+    st.caption(
+        "One place to access all our sample tools "
+        "(some require you to load sample CSV or PDF files to test)."
+    )
 
 def require_auth(app_name: str = "App"):
     # 1) Pull secrets
@@ -64,6 +76,9 @@ def require_auth(app_name: str = "App"):
 
     # Stop executing the rest of the app until authed
     st.stop()
+
+# OPTIONAL: Uncomment to require password for the launcher itself
+# require_auth("Grothko App Launcher")
 
 # ----------------- DATA -----------------
 APPS = [
@@ -127,13 +142,10 @@ APPS = [
 
 # ----------------- UI -----------------
 
-# logo banner
-# st.image("assets/header_logo.png", use_container_width=False)
-
 # Quick filter
 q = st.text_input("Search apps", placeholder="Type a name or tag…").strip().lower()
 
-def matches(app, query):
+def matches(app, query: str) -> bool:
     if not query:
         return True
     hay = " ".join([app["name"], app["desc"], " ".join(app["tags"])]).lower()
@@ -152,20 +164,16 @@ for r in range(rows):
             continue
         app = filtered[idx]
         with col:
-            st.container(border=True)
-            st.markdown(f"### {app['emoji']} {app['name']}")
-            st.write(app["desc"])
-            if app.get("tags"):
-                st.markdown(
-                    " ".join([f"`{t}`" for t in app["tags"]])
-                )
-            # Streamlit >=1.30 has st.link_button; fall back to markdown link if needed.
-            try:
-                st.link_button("Open app", app["url"])
-            except Exception:
-                st.markdown(f"[Open app]({app['url']})")
+            with st.container(border=True):
+                st.markdown(f"### {app['emoji']} {app['name']}")
+                st.write(app["desc"])
+                if app.get("tags"):
+                    st.markdown(" ".join([f"`{t}`" for t in app["tags"]]))
+                # Streamlit >=1.30 has st.link_button; fall back to markdown link if needed.
+                try:
+                    st.link_button("Open app", app["url"])
+                except Exception:
+                    st.markdown(f"[Open app]({app['url']})")
 
 st.divider()
-st.markdown(
-    "Need access or want to add an app? Email **admin@lrgbllc.org**."
-)
+st.markdown("Need access or want to add an app? Email **admin@lrgbllc.org**.")
