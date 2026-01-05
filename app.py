@@ -28,7 +28,7 @@ with col1:
 with col2:
     st.markdown("## Grothko App Launcher")
     st.caption(
-        "One place to access all our sample tools "
+        "One place to access all our sample tools - links may be dormant, click blue button to activate "
         "(some require you to load sample CSV or PDF files to test)."
     )
 
