@@ -27,9 +27,29 @@ with col1:
 
 with col2:
     st.markdown("## Grothko App Launcher")
-    st.caption(
+
+    caption_text = (
         "One place to access all our sample tools, but links may be dormant, click blue button to activate "
         "(some require you to load sample CSV or PDF files to test)."
+    )
+
+    st.markdown(
+        f"""
+        <div style="
+            color: #4ade80;                  /* bright green for dark mode */
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.35rem;
+            padding: 0.5rem 0.75rem;
+            border-left: 4px solid #22c55e;  /* accent bar */
+            background: rgba(34, 197, 94, 0.10);
+            border-radius: 0.5rem;
+            margin-top: 0.25rem;
+        ">
+            {caption_text}
+        </div>
+        """,
+        unsafe_allow_html=True
     )
 
 def require_auth(app_name: str = "App"):
